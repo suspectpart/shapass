@@ -5,11 +5,6 @@ from getpass import getpass
 DEFAULT_PASSWORD_LENGTH = 20
 
 
-class ArgumentException(Exception):
-    def __init__(self, message, errors):
-        super(Exception, self).__init__(message)
-
-
 def ask(message):
     answer = None
     while not answer:
