@@ -21,6 +21,7 @@
     function myfunc() {
 		var master = document.getElementById("master").value;
 		var domain = document.getElementById("domain").value;
+		document.getElementById("master").value = "";
 		var hash = CryptoJS.SHA256(master + "." + domain).toString(CryptoJS.enc.Hex);
 		document.getElementById("password").value = hash.substr(0, 20);
 		document.getElementById("password").focus();
