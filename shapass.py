@@ -28,8 +28,12 @@ if __name__ == "__main__":
     master_password = ask_password()
     domain = ask("domain: ")
 
-    base_password = "{0}.{1}".format(master_password, domain).encode("utf-8")
-    hash = sha256(base_password).hexdigest()
+    base_password = "{0}.{1}".format(master_password, domain)
+    hash = base_password
+   
+    for i in range(0, 10000):
+        hash = sha256(hash.encode("utf-8")).hexdigest()
+    
     password = hash[0:DEFAULT_PASSWORD_LENGTH]
 
-    print("sha256({0}.{1}) => {2}".format("*****", domain, password))
+    print("sha256({0}.{1}) * 10000 => {2}".format("*****", domain, password))
