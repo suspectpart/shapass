@@ -2,7 +2,7 @@ from hashlib import sha256
 from getpass import getpass
 
 
-DEFAULT_PASSWORD_LENGTH = 20
+DEFAULT_PASSWORD_LENGTH = 25
 
 
 def ask(message):
