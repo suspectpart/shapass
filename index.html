@@ -13,7 +13,7 @@
 	<input id="domain" type="text" name="domain"><br><br>
 	<input type="submit" value="Berechnen"><br><br>
 	Password:<br>
-	<input id="password" type="text" maxlength="25" size="25" onfocus="this.select()"><br><br>
+	<input id="password" type="text" maxlength="20" size="20" onfocus="this.select()"><br><br>
 </form> 
 
 <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js"></script>
@@ -28,7 +28,7 @@
 			hash = CryptoJS.SHA256(hash).toString(CryptoJS.enc.Hex);
 		}
 
-		document.getElementById("password").value = hash.substr(0, 25);
+		document.getElementById("password").value = hash.substr(0, 20);
 		document.getElementById("password").focus();
 	}
 
