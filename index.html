@@ -16,7 +16,7 @@
 	<input id="password" type="text" maxlength="20" size="20" onfocus="this.select()"><br><br>
 </form> 
 
-<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js"></script>
+<script src="http://www.bichlmeier.info/sha256.js"></script>
 <script>
     function generate_password() {
 		var master = document.getElementById("master").value;
@@ -25,7 +25,7 @@
 
 		var hash = master + "." + domain;	
 		for(var i = 0; i < 10000; i++) {
-			hash = CryptoJS.SHA256(hash).toString(CryptoJS.enc.Hex);
+			hash = sha256_digest(hash);
 		}
 
 		document.getElementById("password").value = hash.substr(0, 20);
